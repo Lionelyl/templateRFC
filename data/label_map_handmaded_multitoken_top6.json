@@ -1,0 +1,62 @@
+{
+  "B-TRIGGER": [
+    "If",
+    "if",
+    "local",
+    "system",
+    "Event",
+    "set",
+    "when",
+    "When"
+  ],
+  "B-O": [
+    "&newline;",
+    "and",
+    "--",
+    "then",
+    "/*",
+    "*/"
+  ],
+  "B-ACTION": [
+    "connection",
+    "send",
+    "receive",
+    "Send",
+    "segment",
+    "issue"
+  ],
+  "B-TRANSITION": [
+    "state",
+    "changes",
+    "Idle",
+    "moves",
+    "CLOSED",
+    "returns"
+  ],
+  "B-TIMER": [
+    "ConnectRetryTimer",
+    "zero",
+    "sets",
+    "stops",
+    "timer",
+    "resets"
+  ],
+  "B-VARIABLE": [
+    "##-",
+    "##.",
+    "increments",
+    "bound",
+    "lower",
+    "upper",
+    "primary"
+  ],
+  "B-ERROR": [
+    "code",
+    "Error",
+    "error",
+    "Hold",
+    "Expired",
+    "transmit",
+    "Stale"
+  ]
+}

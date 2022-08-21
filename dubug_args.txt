@@ -1,0 +1,25 @@
+--features 
+--savedir . 
+--do_train 
+--do_eval
+--protocol TCP 
+--outdir output
+--bert_model networking_bert_rfcs_only 
+--learning_rate 2e-5 
+--batch_size 1
+--label_map_path data/label_map_data_ratio0.6_multitoken_top6.json
+
+--features                                                      
+--savedir .                                                                                                        
+--protocol TCP                                                  
+--outdir output 												
+--bert_model networking_bert_rfcs_only                          
+--learning_rate 1e-5                                            
+--batch_size 1 	
+--patience 10
+--do_eval    
+--do_train                                                      
+--warmup
+--handmaded_label_map_path data/label_map_handmaded.json
+--label_map_path data/label_map_data_ratio0.6_multitoken_top6.json
+--label_map_path data/label_map_handmaded_multitoken_top6.json

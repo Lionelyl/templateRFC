@@ -1,0 +1,44 @@
+{
+  "B-TRIGGER": [
+    "If",
+    "if",
+    "when",
+    "When"
+  ],
+  "B-O": [
+  ],
+  "B-ACTION": [
+    "send",
+    "Send",
+    "receive",
+    "set",
+    "issue"
+  ],
+  "B-TRANSITION": [
+    "changes",
+    "state",
+    "Idle",
+    "Closed",
+    "Down",
+    "Up"
+  ],
+  "B-TIMER": [
+    "Timer",
+    "zero",
+    "sets",
+    "stops",
+    "timer",
+    "resets"
+  ],
+  "B-VARIABLE": [
+    "##-",
+    "##.",
+    "increments",
+    "sets"
+  ],
+  "B-ERROR": [
+    "code",
+    "Error",
+    "error"
+  ]
+}

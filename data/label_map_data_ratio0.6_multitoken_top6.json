@@ -1,0 +1,58 @@
+{
+  "B-TRIGGER": [
+    "If",
+    "if",
+    "local",
+    "system",
+    "Event",
+    "set"
+  ],
+  "B-O": [
+    "&newline;",
+    "and",
+    "--",
+    "then",
+    "/*",
+    "*/"
+  ],
+  "B-ACTION": [
+    "connection",
+    "peer",
+    "BGP",
+    "all",
+    "TCP",
+    "resources"
+  ],
+  "B-TRANSITION": [
+    "state",
+    "changes",
+    "Idle",
+    "moves",
+    "CLOSED",
+    "returns"
+  ],
+  "B-TIMER": [
+    "ConnectRetryTimer",
+    "zero",
+    "sets",
+    "stops",
+    "timer",
+    "resets"
+  ],
+  "B-VARIABLE": [
+    "ConnectRetryCounter",
+    "increments",
+    "bound",
+    "lower",
+    "upper",
+    "primary"
+  ],
+  "B-ERROR": [
+    "appropriate",
+    "Outgoing-Call-Reply",
+    "Hold",
+    "Expired",
+    "transmit",
+    "Stale"
+  ]
+}

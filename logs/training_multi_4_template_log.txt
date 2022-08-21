@@ -1,0 +1,75 @@
+nohup: 忽略输入
+python3 models/bert_bert_mlp_cuda.py                          			\
+		--features                                                      \
+		--savedir .                                                     \
+		--do_train                                                      \
+		--do_eval                                                       \
+		--heuristics                                                    \
+		--protocol TCP                                                  \
+		--outdir output 												\
+		--bert_model networking_bert_rfcs_only                          \
+		--learning_rate 2e-5                                            \
+		--batch_size 1 													\
+		--cuda_device 2 												\
+		--multi_template 												\
+		--template_num 4 												\
+		--template_id 0
+/home/xiangyoulin/templateRFC/models/data_utils_NEW.py:359: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return X_train, np.array(y_train), level_h_train, level_d_train
+/home/xiangyoulin/templateRFC/models/features.py:212: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array(X_new)
+Some weights of the model checkpoint at networking_bert_rfcs_only were not used when initializing BertModel: ['cls.predictions.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertModel were not initialized from the model checkpoint at networking_bert_rfcs_only and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of the model checkpoint at networking_bert_rfcs_only were not used when initializing BertModel: ['cls.predictions.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertModel were not initialized from the model checkpoint at networking_bert_rfcs_only and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/xiangyoulin/templateRFC
+302 323
+(412, 3, 302, 323) (412, 302, 4053) (412, 302) (412,) (412, 302)
+(45, 3, 302, 323) (45, 302, 4053) (45, 302) (45,) (45, 302)
+(412, 302)
+[0, 1, 2, 3, 4, 5, 6] {'B-TRIGGER': 0, 'B-ACTION': 1, 'O': 2, 'B-TRANSITION': 3, 'B-TIMER': 4, 'B-ERROR': 5, 'B-VARIABLE': 6}
+initialing
+TRAINING!!!!
+  0%|          | 0/412 [00:00<?, ?it/s]  0%|          | 1/412 [00:00<04:30,  1.52it/s]  0%|          | 2/412 [00:01<04:46,  1.43it/s]  1%|          | 3/412 [00:01<04:28,  1.52it/s]  1%|          | 4/412 [00:06<13:55,  2.05s/it]  1%|          | 5/412 [00:07<11:33,  1.70s/it]  1%|▏         | 6/412 [00:07<09:12,  1.36s/it]  2%|▏         | 7/412 [00:09<08:57,  1.33s/it]  2%|▏         | 8/412 [00:09<07:28,  1.11s/it]  2%|▏         | 9/412 [00:10<06:21,  1.06it/s]  2%|▏         | 10/412 [00:19<22:19,  3.33s/it]  3%|▎         | 11/412 [00:20<17:42,  2.65s/it]  3%|▎         | 12/412 [00:24<20:13,  3.03s/it]  3%|▎         | 13/412 [00:24<15:38,  2.35s/it]  3%|▎         | 14/412 [00:25<11:49,  1.78s/it]  4%|▎         | 15/412 [00:25<08:52,  1.34s/it]  4%|▍         | 16/412 [00:26<08:03,  1.22s/it]  4%|▍         | 17/412 [00:27<07:29,  1.14s/it]  4%|▍         | 18/412 [00:28<07:04,  1.08s/it]  5%|▍         | 19/412 [00:29<06:07,  1.07it/s]  5%|▍         | 20/412 [00:29<05:40,  1.15it/s]  5%|▌         | 21/412 [00:30<05:28,  1.19it/s]  5%|▌         | 22/412 [00:34<10:30,  1.62s/it]  6%|▌         | 23/412 [00:34<08:52,  1.37s/it]  6%|▌         | 24/412 [00:46<28:01,  4.33s/it]  6%|▌         | 25/412 [00:47<23:12,  3.60s/it]  6%|▋         | 26/412 [00:51<23:42,  3.68s/it]  7%|▋         | 27/412 [00:57<28:20,  4.42s/it]  7%|▋         | 28/412 [01:00<25:18,  3.95s/it]  7%|▋         | 29/412 [01:01<19:08,  3.00s/it]  7%|▋         | 30/412 [01:02<14:20,  2.25s/it]  8%|▊         | 31/412 [01:02<10:41,  1.68s/it]  8%|▊         | 32/412 [01:03<09:11,  1.45s/it]  8%|▊         | 33/412 [01:04<08:24,  1.33s/it]  8%|▊         | 34/412 [01:05<06:56,  1.10s/it]  8%|▊         | 35/412 [01:05<05:58,  1.05it/s]  9%|▊         | 36/412 [01:06<05:08,  1.22it/s]  9%|▉         | 37/412 [01:07<05:39,  1.10it/s]  9%|▉         | 38/412 [01:07<05:16,  1.18it/s]  9%|▉         | 39/412 [02:08<1:56:39, 18.76s/it] 10%|▉         | 40/412 [02:12<1:28:27, 14.27s/it] 10%|▉         | 41/412 [02:18<1:13:48, 11.94s/it] 10%|█         | 42/412 [02:22<57:44,  9.36s/it]   10%|█         | 43/412 [02:22<41:25,  6.74s/it] 11%|█         | 44/412 [02:28<39:25,  6.43s/it] 11%|█         | 45/412 [02:29<29:10,  4.77s/it] 11%|█         | 46/412 [02:29<21:09,  3.47s/it]Traceback (most recent call last):
+  File "models/bert_bert_mlp_cuda.py", line 590, in <module>
+    main()
+  File "models/bert_bert_mlp_cuda.py", line 487, in main
+    loss = model.neg_log_likelihood(x, x_feats, x_len, x_chunk_len, y)
+  File "models/bert_bert_mlp_cuda.py", line 228, in neg_log_likelihood
+    output = self._get_chunk_features(feats, self.templates)
+  File "models/bert_bert_mlp_cuda.py", line 169, in _get_chunk_features
+    x =self.chunk_bert(inputs_embeds=x)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 1028, in forward
+    return_dict=return_dict,
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 614, in forward
+    output_attentions,
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 498, in forward
+    past_key_value=self_attn_past_key_value,
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 432, in forward
+    attention_output = self.output(self_outputs[0], hidden_states)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 384, in forward
+    hidden_states = self.LayerNorm(hidden_states + input_tensor)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/modules/normalization.py", line 190, in forward
+    input, self.normalized_shape, self.weight, self.bias, self.eps)
+  File "/home/xiangyoulin/anaconda3/envs/rfc7/lib/python3.7/site-packages/torch/nn/functional.py", line 2486, in layer_norm
+    return torch.layer_norm(input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled)
+RuntimeError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 2; 31.75 GiB total capacity; 28.42 GiB already allocated; 3.00 MiB free; 28.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 11%|█         | 46/412 [03:08<25:01,  4.10s/it]make: *** [tcpberttrain] 错误 1
